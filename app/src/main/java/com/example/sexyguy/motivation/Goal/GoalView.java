@@ -30,6 +30,7 @@ public class GoalView extends AppCompatActivity implements GoalContract.view{
     private ImageButton menuBtn;
     private ArrayList<MenuItem> data;
     private MenuListAdapter menuAdapter;
+    private TextView scheduleInsertDdayTextView;
 
     boolean isPageOpen=false;
     Animation translateLeftAnim;
@@ -68,6 +69,7 @@ public class GoalView extends AppCompatActivity implements GoalContract.view{
         goalText=(TextView)findViewById(R.id.goalText);
         menuBtn=(ImageButton)findViewById(R.id.menuBtn);
         ImageButton scheduleBtn=(ImageButton) findViewById(R.id.scheduleBtn);
+        scheduleInsertDdayTextView=(TextView) findViewById(R.id.scheduleInsertDdayTextView);
 
         //
         slidingPage=(LinearLayout)findViewById(R.id.menuListLayout);
@@ -120,9 +122,12 @@ public class GoalView extends AppCompatActivity implements GoalContract.view{
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(), ScheduleView.class);
+                intent.putExtra("dDay",String.valueOf(presenter.doDiffOfDate()));
                 startActivity(intent);
             }
         });
+
+        scheduleInsertDdayTextView.setText(String.valueOf(presenter.doDiffOfDate()));
 
     }
 
@@ -159,7 +164,8 @@ public class GoalView extends AppCompatActivity implements GoalContract.view{
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case 1000:
-                    goalText.setText(data.getStringExtra("changedGoal"));
+                    goalText.setText(presenter.getGoalStringFromDB());
+                    scheduleInsertDdayTextView.setText(String.valueOf(presenter.doDiffOfDate()));
                     break;
             }
         }

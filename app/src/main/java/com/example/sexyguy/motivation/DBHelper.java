@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE SCHEDULEBOOK (itemId INTEGER PRIMARY KEY AUTOINCREMENT, itemName TEXT, itemPicture TEXT, startTime TEXT, endTime TEXT);");
-        db.execSQL("CREATE TABLE BASICOPTIONS (itemId INTEGER PRIMARY KEY, goalMsg TEXT, goalImg TEXT);");
+        db.execSQL("CREATE TABLE BASICOPTIONS (itemId INTEGER PRIMARY KEY, goalMsg TEXT, goalImg TEXT, goalDate TEXT);");
     }
 
     @Override
@@ -25,33 +25,33 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void insertIntoScheduleBookDB(String itemName, String itemPicuture, String startTime, String endTime) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO SCHEDULEBOOK VALUES(null, '" + itemName + "', '" + itemPicuture + "', '"+ startTime +"', '" + endTime + "');");
+        db.execSQL("INSERT INTO SCHEDULEBOOK VALUES(null, '" + itemName + "', '" + itemPicuture + "', '" + startTime + "', '" + endTime + "');");
         db.close();
     }
 
-    public void insertIntoBasicOptionsDB(String goalMsg, String goalImg){
-        SQLiteDatabase db=getWritableDatabase();
-        db.execSQL("INSERT INTO BASICOPTIONS VALUES(1,'" + goalMsg + "', '" + goalImg + "');");
+    public void insertIntoBasicOptionsDB(String goalMsg, String goalImg, String goalDate) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT INTO BASICOPTIONS VALUES(1,'" + goalMsg + "', '" + goalImg + "', '" + goalDate + "');");
     }
 
-    public void updateFromScheduleBookDB(int itemId, String itemName, String itemPicture,String startTime, String endTime) {
+    public void updateFromScheduleBookDB(int itemId, String itemName, String itemPicture, String startTime, String endTime) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("UPDATE SCHEDULEBOOK " +
-                "SET itemName='" + itemName + "' , itemPicture='" + itemPicture + "' , startTime= '" + startTime +"' , endTime= '"+ endTime +"' " +
+                "SET itemName='" + itemName + "' , itemPicture='" + itemPicture + "' , startTime= '" + startTime + "' , endTime= '" + endTime + "' " +
                 "WHERE itemId=" + itemId + ";");
         db.close();
     }
 
-    public void updateFromBasicOptionsDB(String goalMsg, String goalImg){
-        SQLiteDatabase db=getWritableDatabase();
+    public void updateFromBasicOptionsDB(String goalMsg, String goalImg, String goalDate) {
+        SQLiteDatabase db = getWritableDatabase();
         //TODO where itemid가 아닌 다른것으로 구별
-        db.execSQL("UPDATE BASICOPTIONS SET goalMsg='"+goalMsg+"', goalImg='"+goalImg+"';");
+        db.execSQL("UPDATE BASICOPTIONS SET goalMsg='" + goalMsg + "', goalImg='" + goalImg + "', goalDate='" + goalDate + "';");
         db.close();
     }
 
     public void deleteFromScheduleBookDB(int itemId) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM SCHEDULEBOOK WHERE itemId="+itemId+";");
+        db.execSQL("DELETE FROM SCHEDULEBOOK WHERE itemId=" + itemId + ";");
         db.close();
     }
 

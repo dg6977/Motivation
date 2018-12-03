@@ -9,7 +9,7 @@ public interface ChangeGoalContract {
     }
 
     interface presenterForView{
-        void updateChangedGoalString(String changedGoal);
+        void updateChangedGoalString(String changedGoal, String changedImg, String changedDate);
     }
 
     interface presenterForModel{
@@ -17,7 +17,7 @@ public interface ChangeGoalContract {
     }
 
     interface model{
-        void updateChangedGoalString(String changedGoal);
+        void updateChangedGoalString(String changedGoal, String changedImg, String changedDate);
     }
 
 }

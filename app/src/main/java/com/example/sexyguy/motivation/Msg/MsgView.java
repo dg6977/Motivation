@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.sexyguy.motivation.Goal.GoalView;
 import com.example.sexyguy.motivation.Msg.MsgContract;
 import com.example.sexyguy.motivation.Msg.MsgModel;
@@ -55,6 +57,9 @@ public class MsgView extends AppCompatActivity implements MsgContract.view{
                 startActivity(intent);
             }
         });
+
+        GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(cheerUpBack);
+        Glide.with(this).load(R.drawable.moon_with_darksky).into(gifImage);
     }
 
 

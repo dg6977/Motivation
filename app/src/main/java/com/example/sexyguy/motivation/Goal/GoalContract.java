@@ -14,6 +14,7 @@ public interface GoalContract {
     interface presneterForView{
         ArrayList getList();
         String getGoalStringFromDB();
+        int doDiffOfDate();
     }
 
     interface presenterForModel{
@@ -24,6 +25,7 @@ public interface GoalContract {
     interface model{
         ArrayList getList();
         String getGoalStringFromDB();
+        int doDiffOfDate();
     }
 }
 

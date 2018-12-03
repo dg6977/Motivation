@@ -16,8 +16,8 @@ public class ChangeGoalPresenter implements ChangeGoalContract.presenterForModel
         this.model=model;
     }
 
-    public void updateChangedGoalString(String changedGoalString){
-        model.updateChangedGoalString(changedGoalString);
+    public void updateChangedGoalString(String changedGoalString, String changedImg, String changedDate){
+        model.updateChangedGoalString(changedGoalString, changedImg, changedDate);
     }
 
     @Override

@@ -46,6 +46,8 @@ public class ScheduleView extends AppCompatActivity implements ScheduleContract.
         scheduleListView=(ListView) findViewById(R.id.scheduleListView) ;
         setAdapterForScheduleListView();
 
+        percentOfSuccess.setText(getIntent().getStringExtra("dDay"));
+
         insertScheduleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

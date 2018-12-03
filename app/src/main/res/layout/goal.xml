@@ -125,7 +125,7 @@
 
     <LinearLayout
         android:id="@+id/menuListLayout"
-        android:layout_width="400dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="end"
         android:background="#808080"

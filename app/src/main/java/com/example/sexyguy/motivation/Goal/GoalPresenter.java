@@ -24,6 +24,11 @@ public class GoalPresenter implements GoalContract.presenterForModel,GoalContrac
     }
 
     @Override
+    public int doDiffOfDate() {
+        return model.doDiffOfDate();
+    }
+
+    @Override
     public ArrayList getList() {
         return model.getList();
     }

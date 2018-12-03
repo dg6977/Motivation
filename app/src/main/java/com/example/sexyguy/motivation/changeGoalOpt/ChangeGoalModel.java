@@ -19,7 +19,7 @@ public class ChangeGoalModel implements ChangeGoalContract.model{
         dbHelper=new DBHelper(context,"BASICOPTIONS",null,1);
     }
 
-    public void updateChangedGoalString(String changedGoal){
+    public void updateChangedGoalString(String changedGoal, String changedImg, String changedDate){
         String goalImg=null;
         db=dbHelper.getWritableDatabase();
         Cursor c=db.rawQuery("select * from BASICOPTIONS",null);
@@ -28,7 +28,7 @@ public class ChangeGoalModel implements ChangeGoalContract.model{
 
             goalImg=c.getString(c.getColumnIndex("goalImg"));
         }
-        dbHelper.updateFromBasicOptionsDB(changedGoal,goalImg);
+        dbHelper.updateFromBasicOptionsDB(changedGoal,goalImg,changedDate);
     }
 
     private void setContext(Context context){
