@@ -1,5 +1,7 @@
 package com.example.sexyguy.motivation;
 
+import android.annotation.SuppressLint;
+import android.app.DownloadManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -31,7 +33,7 @@ public class BroadCastD extends BroadcastReceiver {
 
         dbHelper=new DBHelper(context,"SCHEDULEBOOK.db",null,1);
         db=dbHelper.getReadableDatabase();
-        Cursor c=db.rawQuery("select * from SCHEDULEBOOK where startTime='"+startTime+"';",null);
+        @SuppressLint("Recycle") Cursor c=db.rawQuery("select * from SCHEDULEBOOK where startTime='"+startTime+"';",null);
 
         while(c.moveToNext()) {
             scheduleTitle = c.getString(c.getColumnIndex("itemName"));
@@ -43,6 +45,7 @@ public class BroadCastD extends BroadcastReceiver {
 
         notificationManager.notify(1,builder.build());
     }
+
 
     private void setup(){
 

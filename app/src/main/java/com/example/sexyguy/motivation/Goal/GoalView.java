@@ -57,6 +57,7 @@ public class GoalView extends AppCompatActivity implements GoalContract.view{
         }
     }
 
+
     private void setUpMVP(){
         this.presenter=new GoalPresenter(this);
         GoalModel model=new GoalModel(presenter);

@@ -11,7 +11,7 @@ public class GoalPresenter implements GoalContract.presenterForModel,GoalContrac
     private GoalContract.view view;
     private GoalContract.model model;
 
-    public GoalPresenter(GoalContract.view view){
+    GoalPresenter(GoalContract.view view){
         this.view=view;
     }
 

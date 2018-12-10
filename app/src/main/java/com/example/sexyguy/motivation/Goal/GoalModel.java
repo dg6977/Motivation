@@ -1,5 +1,6 @@
 package com.example.sexyguy.motivation.Goal;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -73,7 +74,7 @@ public class GoalModel implements GoalContract.model {
     public int doDiffOfDate()  {
         long now=System.currentTimeMillis();
         Date date=new Date(now);
-        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
         String tmpDate=formatter.format(date);
 
         Date currentDate= null;
