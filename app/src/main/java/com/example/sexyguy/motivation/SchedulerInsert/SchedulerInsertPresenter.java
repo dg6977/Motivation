@@ -36,5 +36,8 @@ public class SchedulerInsertPresenter implements SchedulerInsertContract.present
     public void updateScheduleToDB( int itemId, String itemName, String itemPicture,String startTime, String endTime){
         model.updateScheduleToDB(itemId,itemName,itemPicture,startTime,endTime);
     }
+    public int getItemIdFromDB(String itemName){
+        return model.getItemIdFromDB(itemName);
+    }
 
 }

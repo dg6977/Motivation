@@ -17,7 +17,7 @@ public class Alarm {
         this.context=context;
     }
 
-    public void setAlarm(String startTime){
+    public void setAlarm(int scheduleItemId, String startTime){
         this.startTime=startTime;
 
         am=(AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
@@ -26,7 +26,7 @@ public class Alarm {
 
         intent.putExtra("startTime",startTime);
 
-        PendingIntent sender=PendingIntent.getBroadcast(context,0,intent,0);
+        PendingIntent sender=PendingIntent.getBroadcast(context,scheduleItemId,intent,PendingIntent.FLAG_CANCEL_CURRENT);
 
         Calendar calendar=Calendar.getInstance();
 

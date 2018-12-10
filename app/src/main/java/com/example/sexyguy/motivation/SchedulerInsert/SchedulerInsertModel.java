@@ -31,6 +31,9 @@ public class SchedulerInsertModel implements SchedulerInsertContract.model{
     public void setScheduleImg(){
 
     }
+    public int getItemIdFromDB(String itemName){
+        return dbHelper.getItemIdByItemName(itemName);
+    }
 
 
     private void setContext(Context context){

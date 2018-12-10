@@ -53,6 +53,8 @@ public class ChangeGoalView extends Activity implements ChangeGoalContract.view{
         year=calendar.get(Calendar.YEAR);
         month=calendar.get(Calendar.DATE);
         date=calendar.get(Calendar.DAY_OF_MONTH);
+        String currentDate=String.format("%d-%d-%d",year,month+2,date);
+        changeGoalDdayEditText.setText(currentDate);
 
         insertChangeGoalBtn.setOnClickListener(new View.OnClickListener() {
             @Override

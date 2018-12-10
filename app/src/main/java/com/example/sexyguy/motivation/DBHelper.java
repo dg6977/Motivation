@@ -55,6 +55,16 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public int getItemIdByItemName(String itemName){
+        SQLiteDatabase db=getReadableDatabase();
+        Cursor cursor=db.rawQuery("SELECT itemId FROM SCHEDULEBOOK WHERE itemName='"+itemName+"';",null);
+        int result=0;
+        while (cursor.moveToNext()){
+            result=Integer.valueOf(cursor.getString(0));
+        }
+        return result;
+    }
+
     public String getResult() {
         SQLiteDatabase db = getReadableDatabase();
         String result = "";

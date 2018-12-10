@@ -68,15 +68,15 @@ public class SchedulerInsertView extends Activity implements SchedulerInsertCont
             @Override
             public void onClick(View v) {
                 itemName = titleEdit.getText().toString();
-                //
-                new Alarm(getApplicationContext()).setAlarm(startTimeEditText.getText().toString());
-                //
+
                 if(!isStartForUpdate) {
                     presenter.inputToDB(itemName, itemPicture, startTimeEditText.getText().toString(), endTimeEditText.getText().toString());
+                    new Alarm(getApplicationContext()).setAlarm(presenter.getItemIdFromDB(itemName),startTimeEditText.getText().toString());
                 }
                 else {
                     presenter.updateScheduleToDB(checkIntent.getIntExtra("scheduleItemId",-1),
                             itemName,itemPicture,startTimeEditText.getText().toString(),endTimeEditText.getText().toString());
+                    new Alarm(getApplicationContext()).setAlarm(presenter.getItemIdFromDB(itemName),startTimeEditText.getText().toString());
                 }
                 Intent intent = new Intent();
                 intent.putExtra("changedSchedule", "changedSchedule");
