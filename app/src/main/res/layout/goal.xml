@@ -54,7 +54,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/menu" />
+                app:srcCompat="@drawable/small_calendar" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -90,7 +90,7 @@
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/scheduleBtn"
-                app:layout_constraintHorizontal_bias="0.211"
+                app:layout_constraintHorizontal_bias="0.16"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -128,7 +128,7 @@
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="end"
-        android:background="#808080"
+        android:background="#696969"
         android:visibility="gone"
         android:orientation="vertical">
 

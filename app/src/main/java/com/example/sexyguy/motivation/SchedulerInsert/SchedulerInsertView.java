@@ -2,6 +2,7 @@ package com.example.sexyguy.motivation.SchedulerInsert;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -148,7 +149,7 @@ public class SchedulerInsertView extends Activity implements SchedulerInsertCont
 
     public void tmpResult(String result){
         //TODO temporary result
-        TextView temporaryResult=(TextView) findViewById(R.id.tmpResult);
-        temporaryResult.setText(result);
+        //TextView temporaryResult=(TextView) findViewById(R.id.tmpResult);
+        //temporaryResult.setText(result);
     }
 }

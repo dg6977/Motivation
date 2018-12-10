@@ -37,7 +37,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:hint="CHANGEGOALEDITTEXT"
+        android:hint=""
         android:textSize="15sp"
         android:textAlignment="center"
         android:textColor="#000000"
