@@ -25,9 +25,6 @@ public class SchedulerInsertPresenter implements SchedulerInsertContract.present
         model.inputToDB(itemName,itemPicture,startTime,endTime);
     }
 
-    public void setScheduleImg(){
-        model.setScheduleImg();
-    }
 
     public void tmpResult(String result){
         view.tmpResult(result);

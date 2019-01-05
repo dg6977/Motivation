@@ -12,7 +12,6 @@ public interface SchedulerInsertContract {
 
     interface presenterForView{
         void inputToDB(String itemName, String itemPicture, String startTime, String endTime);
-        void setScheduleImg();
         void updateScheduleToDB( int itemId, String itemName, String itemPicture,String startTime, String endTime);
         int getItemIdFromDB(String itemName);
 
@@ -25,7 +24,6 @@ public interface SchedulerInsertContract {
 
     interface model{
         void inputToDB(String itemName, String itemPicture, String startTime, String endTime);
-        void setScheduleImg();
         void updateScheduleToDB( int itemId, String itemName, String itemPicture,String startTime, String endTime);
         int getItemIdFromDB(String itemName);
     }
